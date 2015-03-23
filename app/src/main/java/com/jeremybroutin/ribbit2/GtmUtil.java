@@ -8,7 +8,7 @@ import com.google.android.gms.tagmanager.TagManager;
 
 
 public class GtmUtil {
-    //constructor
+
     private GtmUtil(){}
 
     private static final String TAG = GtmUtil.class.getName();
