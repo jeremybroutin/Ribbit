@@ -4,17 +4,48 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name="com.jeremybroutin.ribbit2.RibbitApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:name="RibbitApplication">
+        android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.jeremybroutin.ribbit2.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jeremybroutin.ribbit2.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jeremybroutin.ribbit2.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName="com.jeremybroutin.ribbit2.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.jeremybroutin.ribbit2.EditFriendsActivity"
+            android:label="@string/title_activity_edit_friends"
+            android:parentActivityName="com.jeremybroutin.ribbit2.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jeremybroutin.ribbit2.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.jeremybroutin.ribbit2.SplashActivity"
+            android:label="@string/title_activity_splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,15 +53,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".SignUpActivity"
-            android:label="@string/title_activity_sign_up"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.jeremybroutin.ribbit2.LoginActivity">
+            android:name="com.jeremybroutin.ribbit2.RecipientsActivity"
+            android:label="@string/title_activity_recipients"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
